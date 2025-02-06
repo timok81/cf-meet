@@ -87,3 +87,6 @@ As a user, I should be able to view charts that visualize upcoming events, so th
  - When the city hasn't been specified
  - Then display chart with upcoming events for all cities
 
+## Diagram of app operations
+
+![Diagram of the app architecture.](https://github.com/timok81/cf-meet/blob/main/src/assets/meet-app-diagram.png?raw=true)
