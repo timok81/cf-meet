@@ -1,76 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1739260187080" clover="3.2.0">
-  <project timestamp="1739260187080" name="All files">
-    <metrics statements="44" coveredstatements="44" conditionals="10" coveredconditionals="9" methods="16" coveredmethods="16" elements="70" coveredelements="69" complexity="0" loc="44" ncloc="44" packages="2" files="7" classes="7"/>
+<coverage generated="1739279320929" clover="3.2.0">
+  <project timestamp="1739279320929" name="All files">
+    <metrics statements="59" coveredstatements="59" conditionals="12" coveredconditionals="11" methods="20" coveredmethods="20" elements="91" coveredelements="90" complexity="0" loc="59" ncloc="59" packages="2" files="7" classes="7"/>
     <package name="src">
-      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
       <file name="App.jsx" path="C:\Users\timok\OneDrive\Documents\cf-webdev\cf-meet\src\App.jsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+        <line num="16" count="11" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="20" count="11" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="23" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="35" type="stmt"/>
+        <line num="26" count="7" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="30" count="11" type="stmt"/>
       </file>
       <file name="api.js" path="C:\Users\timok\OneDrive\Documents\cf-webdev\cf-meet\src\api.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="70" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="350" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="16" type="stmt"/>
       </file>
       <file name="mock-data.js" path="C:\Users\timok\OneDrive\Documents\cf-webdev\cf-meet\src\mock-data.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="35" coveredstatements="35" conditionals="10" coveredconditionals="9" methods="12" coveredmethods="12"/>
+      <metrics statements="38" coveredstatements="38" conditionals="10" coveredconditionals="9" methods="13" coveredmethods="13"/>
       <file name="CitySearch.jsx" path="C:\Users\timok\OneDrive\Documents\cf-webdev\cf-meet\src\components\CitySearch.jsx">
-        <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="26" type="stmt"/>
-        <line num="5" count="26" type="stmt"/>
-        <line num="6" count="26" type="stmt"/>
-        <line num="8" count="26" type="stmt"/>
-        <line num="9" count="12" type="stmt"/>
-        <line num="10" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="12" count="24" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="16" count="12" type="stmt"/>
-        <line num="19" count="26" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="25" count="26" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="38" count="12" type="stmt"/>
+        <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="7"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="58" type="stmt"/>
+        <line num="5" count="58" type="stmt"/>
+        <line num="6" count="58" type="stmt"/>
+        <line num="8" count="58" type="stmt"/>
+        <line num="9" count="16" type="stmt"/>
+        <line num="12" count="58" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="14" count="18" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="36" type="stmt"/>
+        <line num="19" count="18" type="stmt"/>
+        <line num="20" count="18" type="stmt"/>
+        <line num="23" count="58" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="30" count="58" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="43" count="26" type="stmt"/>
       </file>
       <file name="Event.jsx" path="C:\Users\timok\OneDrive\Documents\cf-webdev\cf-meet\src\components\Event.jsx">
         <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="42" type="stmt"/>
-        <line num="6" count="42" type="stmt"/>
-        <line num="7" count="42" type="stmt"/>
-        <line num="8" count="42" type="stmt"/>
-        <line num="9" count="42" type="stmt"/>
-        <line num="10" count="42" type="stmt"/>
-        <line num="12" count="42" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="187" type="stmt"/>
+        <line num="6" count="187" type="stmt"/>
+        <line num="7" count="187" type="stmt"/>
+        <line num="8" count="187" type="stmt"/>
+        <line num="9" count="187" type="stmt"/>
+        <line num="10" count="187" type="stmt"/>
+        <line num="12" count="187" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
       </file>
       <file name="EventList.jsx" path="C:\Users\timok\OneDrive\Documents\cf-webdev\cf-meet\src\components\EventList.jsx">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="7" count="35" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="7" count="180" type="cond" truecount="2" falsecount="0"/>
       </file>
       <file name="NumberOfEvents.jsx" path="C:\Users\timok\OneDrive\Documents\cf-webdev\cf-meet\src\components\NumberOfEvents.jsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="10" type="stmt"/>
-        <line num="6" count="10" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
         <line num="7" count="4" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
-        <line num="11" count="10" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
       </file>
     </package>
   </project>
