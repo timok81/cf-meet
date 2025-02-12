@@ -19,14 +19,14 @@ const Event = ({ event }) => {
         {expanded ? "Hide details" : "Show details"}
       </button>
       {expanded && (
-        <>
+        <div className="details">
           <hr />
           <h2>About event</h2>
           <a href={calendarLink}>See details on Google Calendar</a>
 
           <br />
           <p className="event-description">{description}</p>
-        </>
+        </div>
       )}
     </li>
   );
