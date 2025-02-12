@@ -60,5 +60,5 @@ export default CitySearch;
 
 CitySearch.propTypes = {
   allLocations: PropTypes.array,
-  setCurrentCity: PropTypes.func.isRequired,
+  setCurrentCity: PropTypes.func
 };
