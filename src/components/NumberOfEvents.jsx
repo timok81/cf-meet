@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const NumberOfEvents = ({ setCurrentNoe }) => {
   const [eventsAmount, setEventsAmount] = useState(32);
@@ -11,6 +12,7 @@ const NumberOfEvents = ({ setCurrentNoe }) => {
 
   return (
     <div>
+      <label htmlFor="events-amount">Events: </label>
       <input
         type="text"
         id="events-amount"
@@ -22,3 +24,7 @@ const NumberOfEvents = ({ setCurrentNoe }) => {
 };
 
 export default NumberOfEvents;
+
+NumberOfEvents.propTypes = {
+  setCurrentNoe: PropTypes.func.isRequired,
+};

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const Event = ({ event }) => {
   const [expanded, setExpanded] = useState(false);
@@ -10,7 +11,7 @@ const Event = ({ event }) => {
   const calendarLink = event.htmlLink;
 
   return (
-    <li>
+    <li className="event">
       <h1>{title}</h1>
       <p>{startTime}</p>
       <p>{location}</p>
@@ -19,8 +20,11 @@ const Event = ({ event }) => {
       </button>
       {expanded && (
         <>
+          <hr />
           <h2>About event</h2>
           <a href={calendarLink}>See details on Google Calendar</a>
+
+          <br />
           <p className="event-description">{description}</p>
         </>
       )}
@@ -29,3 +33,13 @@ const Event = ({ event }) => {
 };
 
 export default Event;
+
+Event.propTypes = {
+  event: PropTypes.shape({
+    summary: PropTypes.string.isRequired,
+    created: PropTypes.string,
+    location: PropTypes.string,
+    description: PropTypes.string,
+    htmlLink: PropTypes.string,
+  }).isRequired,
+};

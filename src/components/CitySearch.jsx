@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -56,3 +57,8 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
 };
 
 export default CitySearch;
+
+CitySearch.propTypes = {
+  allLocations: PropTypes.array,
+  setCurrentCity: PropTypes.func.isRequired,
+};
