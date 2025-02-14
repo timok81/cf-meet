@@ -6,8 +6,10 @@ import NumberOfEvents from "../components/NumberOfEvents";
 describe("<NumberOfEvents /> component", () => {
   let numberInput;
   beforeEach(() => {
-    const numberComponent = render(<NumberOfEvents setCurrentNoe={() => {}}/>);
-    numberInput = numberComponent.queryByRole("textbox");
+    const numberComponent = render(
+      <NumberOfEvents setCurrentNoe={() => {}} setErrorAlert={() => {}} />
+    );
+    numberInput = numberComponent.queryByRole("spinbutton");
   });
 
   test("the component contains an input field", () => {
@@ -15,12 +17,12 @@ describe("<NumberOfEvents /> component", () => {
   });
 
   test("the initial input field value is 32", () => {
-    expect(numberInput).toHaveValue("32");
+    expect(numberInput).toHaveValue(32);
   });
 
   test("the value in input field changes when the user types in a new number", async () => {
     const user = userEvent.setup();
     await user.type(numberInput, "{backspace}{backspace}10");
-    expect(numberInput).toHaveValue("10");
+    expect(numberInput).toHaveValue(10);
   });
 });
