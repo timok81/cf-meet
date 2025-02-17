@@ -8,18 +8,18 @@ const NumberOfEvents = ({ setCurrentNoe, setErrorAlert }) => {
     const value = event.target.value;
     setEventsAmount(value);
 
-
     let errorText;
     if (isNaN(value)) {
       errorText = "Please use numbers only";
     } else if (value < 0) {
       errorText = "Only positive numbers may be used";
+    } else if (value > 32) {
+      errorText = "Maximum number of events displayed is 32";
     } else {
       errorText = "";
       setCurrentNoe(value);
     }
     setErrorAlert(errorText);
-    
   };
 
   return (
@@ -27,6 +27,8 @@ const NumberOfEvents = ({ setCurrentNoe, setErrorAlert }) => {
       <label htmlFor="events-amount">Events: </label>
       <input
         type="number"
+        min={"1"}
+        max={"32"}
         id="events-amount"
         value={eventsAmount}
         onChange={handleInputChanged}

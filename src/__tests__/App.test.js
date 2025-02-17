@@ -10,6 +10,10 @@ describe("<App/> component", () => {
     AppDOM = render(<App />).container.firstChild;
   });
 
+  test("render alerts container", () => {
+    expect(AppDOM.querySelector(".alerts-container")).toBeInTheDocument();
+  });
+
   test("renders list of events", () => {
     expect(AppDOM.querySelector("#event-list")).toBeInTheDocument();
   });
@@ -18,7 +22,7 @@ describe("<App/> component", () => {
     expect(AppDOM.querySelector("#city-search")).toBeInTheDocument();
   });
 
-  test("render CitySearch", () => {
+  test("render NumberOfEvents", () => {
     expect(AppDOM.querySelector("#events-amount")).toBeInTheDocument();
   });
 });
@@ -81,5 +85,29 @@ describe("<App/> integration", () => {
       within(EventListDOM).queryAllByRole("listitem");
 
     expect(allRenderedEventitems.length).toBe(10);
+  });
+
+  test("negative numbers in number input causes error alert to appear", async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+
+    const NumberInputDOM = AppDOM.querySelector("#events-amount");
+    await user.type(NumberInputDOM, "{backspace}{backspace}-1");
+    const AlertsContainerDOM = AppDOM.querySelector(".alerts-container");
+
+    expect(AlertsContainerDOM.firstChild).toBeInTheDocument();
+  });
+
+  test("too big numbers in number input causes error alert to appear", async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+
+    const NumberInputDOM = AppDOM.querySelector("#events-amount");
+    await user.type(NumberInputDOM, "{backspace}{backspace}33");
+    const AlertsContainerDOM = AppDOM.querySelector(".alerts-container");
+
+    expect(AlertsContainerDOM.firstChild).toBeInTheDocument();
   });
 });
