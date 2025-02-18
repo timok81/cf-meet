@@ -22,7 +22,7 @@ const CityEventsChart = ({ allLocations, events }) => {
       const count = events.filter(
         (event) => event.location === location
       ).length;
-      const city = location.split(", ")[0];
+      const city = location.split(/, | - /)[0];
       return { city, count };
     });
     return data;
@@ -34,8 +34,8 @@ const CityEventsChart = ({ allLocations, events }) => {
         margin={{
           top: 20,
           right: 0,
-          bottom: 20,
-          left: 0,
+          bottom: 60,
+          left: -30,
         }}
       >
         <CartesianGrid />
