@@ -180,6 +180,10 @@ a:visited {
   #event-list {
     width: 19rem;
   }
+  
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media all and (min-width: 400px) {
@@ -198,6 +202,11 @@ a:visited {
 @media all and (min-width: 768px) {
   #event-list {
     width: 40rem;
+  }
+
+  .charts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
