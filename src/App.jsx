@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { extractLocations, getEvents } from "./api";
 import { ErrorAlert, InfoAlert, WarningAlert } from "./components/Alert";
 import "./App.css";
+import CityEventsChart from "./components/CityEventsChart";
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -51,6 +52,7 @@ const App = () => {
         setCurrentNoe={setCurrentNOE}
         setErrorAlert={setErrorAlert}
       />
+      <CityEventsChart allLocations={allLocations} events={events} />
       <EventList events={events} />
     </div>
   );
