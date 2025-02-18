@@ -1,3 +1,22 @@
+:root {
+  --primary-color: #ce6ace;
+  --secondary-color: #8d458d;
+  --bg-color: #24203d;
+  --input-bg-color: #383069;
+  --suggestions-bg-color: #6e60be;
+  --suggestions-hover: #782da3;
+  --event-border-color: #b858b8;
+  --event-bg-color: #524599;
+  --button-color: #383069;
+  --button-border-color: #b858b8;
+  --button-text-color: #ffcfff;
+  --button-hover-color: #703681;
+  --box-shadow-color: rgb(0, 0, 0, 0.5);
+  --link-color: #5bfff1;
+  --link-visited-color: #e48cff;
+}
+
+
 html {
   font-family: "Nunito", serif;
   font-weight: 400;
@@ -9,8 +28,26 @@ html {
 body {
   display: flex;
   justify-content: center;
-  background-color: #24203d;
+  background-color: var(--bg-color);
   color: white;
+}
+
+.custom-tooltip {
+  background-color: var(--input-bg-color);
+  padding: 4px 16px 4px 16px;
+  border-radius: 5px;
+  outline: 1px solid var(--event-border-color);
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .App {
@@ -22,6 +59,23 @@ body {
   box-sizing: border-box;
 }
 
+.search-container>h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  color: var(--link-color);
+  margin-bottom: 1rem;
+}
+
+.bg-top {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(var(--event-bg-color), var(--bg-color));
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -31,31 +85,59 @@ p {
   margin: 5px 0;
 }
 
+text {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.search-container>div {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+hr {
+  border: 1px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 8px;
-  border: 5px solid #8d458d;
+  border: 5px solid var(--secondary-color);
   font-size: 14px;
   line-height: 20px;
   align-self: center;
   height: 40px;
   margin-bottom: 20px;
-  background-color: #383069;
+  background-color: var(--input-bg-color);
   color: white;
 }
 
 input[type="number"] {
-  min-width: 75px;
+  min-width: 50px;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus {
-  outline: 2px solid #ce6ace;
-  ;
+  outline: 2px solid var(--primary-color);
 }
 
 #events-amount {
+  margin-left: 12px;
   width: 50px;
 }
 
@@ -66,7 +148,6 @@ input[type="number"]:focus {
 #city-search {
   display: flex;
   flex-direction: column;
-  margin: auto;
   position: relative;
 }
 
@@ -86,7 +167,7 @@ input[type="number"]:focus {
   padding: 8px 6px 8px 10px;
   background-color: #ffffff;
   cursor: default;
-  background-color: #6e60be;
+  background-color: var(--suggestions-bg-color);
 }
 
 .suggestions>li:first-child {
@@ -100,11 +181,12 @@ input[type="number"]:focus {
 }
 
 .suggestions>li:hover {
-  background-color: #782da3;
+  background-color: var(--suggestions-hover)
 }
 
 #event-list {
   justify-self: center;
+  width: 100%;
 }
 
 .event {
@@ -112,10 +194,14 @@ input[type="number"]:focus {
   padding: 16px;
   margin-bottom: 1rem;
   text-align: left;
-  outline: 2px solid #b858b8;
+  outline: 2px solid var(--event-border-color);
   border-radius: 10px;
   position: relative;
-  background-color: #524599;
+  background-color: var(--event-bg-color);
+}
+
+.event>p {
+  color: var(--button-text-color);
 }
 
 .event-description {
@@ -130,7 +216,7 @@ h2 {
 }
 
 a {
-  color: #5bfff1;
+  color: var(--link-color);
   font-weight: 500;
   text-decoration: none;
 }
@@ -140,14 +226,9 @@ a:hover {
   text-underline-offset: 5px;
 }
 
-a:focus {
-  outline: 1px solid rgb(0, 0, 0);
-  outline-offset: 3px;
-}
-
 a:visited {
-  color: #e48cff;
-  outline: 1px solid rgb(0, 0, 0);
+  color: var(--link-visited-color);
+  outline: 2px solid var(--button-text-color);
   outline-offset: 3px;
 }
 
@@ -159,13 +240,19 @@ a:visited {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #383069;
-  outline: 2px solid #b858b8;
-  color: #ffcfff;
+  background-color: var(--button-color);
+  outline: 2px solid var(--button-border-color);
+  color: var(--button-text-color);
 }
 
-.show-details:hover {
-  background-color: #703681;
+.show-details:hover,
+.show-charts:hover {
+  background-color: var(--button-hover-color);
+}
+
+.show-details:focus,
+.show-charts:focus {
+outline: 2px solid var(--button-text-color);
 }
 
 .alerts-container {
@@ -176,42 +263,106 @@ a:visited {
   z-index: 1000;
 }
 
+.chart,
+.pie-chart {
+  margin-bottom: 5rem;
+}
+
+.charts-container {
+  position: relative;
+  background-color: #1c1933;
+  border-radius: 10px;
+  padding: 6px;
+  text-align: left;
+  width: 100%;
+}
+
+.charts-container-expanded {
+  padding: 16px;
+  text-align: center;
+}
+
+.charts-container h2 {
+  margin: 0 0 0 16px;
+  color: white;
+}
+
+.show-charts {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--button-color);
+  color: var(--button-text-color)
+}
+
 @media all and (max-width: 400px) {
-  #event-list {
+  .App {
     width: 19rem;
   }
-  
-  .charts-container {
+
+  .charts-container-expanded {
     grid-template-columns: 1fr;
+  }
+
+  .search-container>div {
+    justify-content: center;
+  }
+
+  .pie-chart text {
+    display: none;
   }
 }
 
 @media all and (min-width: 400px) {
-  #event-list {
+  .App {
     width: 23rem;
+  }
+
+  .search-container>div {
+    justify-content: center;
+  }
+
+  .pie-chart text {
+    display: none;
   }
 }
 
 
 @media all and (min-width: 600px) {
-  #event-list {
-    width: 28rem;
+  .App {
+    width: 35rem;
+  }
+
+  .pie-chart text {
+    display: none;
+  }
+
+  .search-container>div {
+    justify-content: right;
   }
 }
 
 @media all and (min-width: 768px) {
-  #event-list {
-    width: 40rem;
+  .App {
+    width: 45rem;
   }
 
-  .charts-container {
+  .charts-container-expanded {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media all and (min-width: 992px) {
-  #event-list {
-    width: 50rem;
+  .App {
+    width: 60rem;
+  }
+
+  .pie-chart text {
+    display: inline
   }
 }

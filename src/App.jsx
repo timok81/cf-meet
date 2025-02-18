@@ -8,6 +8,7 @@ import { ErrorAlert, InfoAlert, WarningAlert } from "./components/Alert";
 import "./App.css";
 import CityEventsChart from "./components/CityEventsChart";
 import EventGenresChart from "./components/EventGenresChart";
+import Charts from "./components/Charts";
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -44,20 +45,24 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
-      <CitySearch
-        allLocations={allLocations}
-        setCurrentCity={setCurrentCity}
-        setInfoAlert={setInfoAlert}
-      />
-      <NumberOfEvents
-        setCurrentNoe={setCurrentNOE}
-        setErrorAlert={setErrorAlert}
-      />
+      <div className="bg-top"></div>
 
-      <div className="charts-container">
-        <EventGenresChart events={events}/>
-        <CityEventsChart allLocations={allLocations} events={events} />
+      <div className="search-container">
+        <h1>MEET</h1>
+        <div>
+          <CitySearch
+            allLocations={allLocations}
+            setCurrentCity={setCurrentCity}
+            setInfoAlert={setInfoAlert}
+          />
+          <NumberOfEvents
+            setCurrentNoe={setCurrentNOE}
+            setErrorAlert={setErrorAlert}
+          />
+        </div>
       </div>
+
+      <Charts events={events} allLocations={allLocations} />
       <EventList events={events} />
     </div>
   );

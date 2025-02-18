@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { ResponsiveContainer, PieChart, Pie, Legend } from "recharts";
+import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 import PropTypes from "prop-types";
 
 const EventGenresChart = ({ events }) => {
   const [data, setData] = useState([]);
-  const genres = ["React", "JavaScript", "Node", "jQuery", "Angular"];
+  const genres = ["React", "JavaScript", "Node", "JQuery", "Angular"];
+  const colors = ["#E4572E", "#17BEBB", "#FFC914", "#2E6171", "#76B041"];
 
   useEffect(() => {
     setData(getData());
@@ -21,13 +22,13 @@ const EventGenresChart = ({ events }) => {
   }) => {
     const RADIAN = Math.PI / 180;
     const radius = outerRadius;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.07;
-    const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.07;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.1;
+    const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.1;
     return percent ? (
       <text
         x={x}
         y={y}
-        fill="#8884d8"
+        fill="#ce6ace"
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
       >
@@ -47,7 +48,8 @@ const EventGenresChart = ({ events }) => {
   };
 
   return (
-    <ResponsiveContainer width="99%" height={400}>
+    <ResponsiveContainer width="99%" height={400} className={"pie-chart"}>
+      <h2>Events by type</h2>
       <PieChart>
         <Pie
           data={data}
@@ -55,8 +57,13 @@ const EventGenresChart = ({ events }) => {
           fill="#8884d8"
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={130}
-        />
+          outerRadius={120}
+        >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={colors[index]} stroke={colors[index]}/>
+        ))}
+        </Pie>
+        <Legend />
       </PieChart>
     </ResponsiveContainer>
   );

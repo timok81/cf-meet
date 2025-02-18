@@ -5,7 +5,7 @@ const Event = ({ event }) => {
   const [expanded, setExpanded] = useState(false);
 
   const title = event.summary;
-  const startTime = event.created;
+  const startTime = event.created.slice(0, 10);
   const location = event.location;
   const description = event.description;
   const calendarLink = event.htmlLink;
