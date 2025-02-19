@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { extractLocations, getEvents } from "./api";
 import { ErrorAlert, InfoAlert, WarningAlert } from "./components/Alert";
 import "./App.css";
-import CityEventsChart from "./components/CityEventsChart";
-import EventGenresChart from "./components/EventGenresChart";
 import Charts from "./components/Charts";
 
 const App = () => {
