@@ -44,7 +44,6 @@ const App = () => {
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
       <div className="bg-top"></div>
-
       <div className="search-container">
         <h1>MEET</h1>
         <div>
@@ -59,9 +58,13 @@ const App = () => {
           />
         </div>
       </div>
-
-      <Charts events={events} allLocations={allLocations} />
-      <EventList events={events} />
+      {events.length < 1 && <h2>Fetching events...</h2>}
+      {events.length > 0 && (
+        <>
+          <Charts events={events} allLocations={allLocations} />
+          <EventList events={events} />
+        </>
+      )}{" "}
     </div>
   );
 };
