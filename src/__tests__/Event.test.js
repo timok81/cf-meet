@@ -9,7 +9,9 @@ describe("<Event/> component", () => {
     const allEvents = await getEvents();
     const EventComponent = render(<Event event={allEvents[0]} />);
     const title = EventComponent.queryByText(allEvents[0].summary);
-    const startTime = EventComponent.queryByText(allEvents[0].created);
+    const startTime = EventComponent.queryByText(
+      allEvents[0].created.slice(0, 10)
+    );
     const location = EventComponent.queryByText(allEvents[0].location);
     const expandButton = EventComponent.queryByText("Show details");
     expect(title).toBeInTheDocument();
