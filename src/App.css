@@ -288,10 +288,19 @@ a:visited {
   text-align: left;
   width: 100%;
   margin-bottom: 2rem;
+  transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  overflow: hidden;
+  height: 50px;
 }
 
 .charts-container-expanded {
-  padding: 16px;
+  height: 500px;
+}
+
+.charts-details {
+  margin: 0;
+  padding: 0;
+  display: flex;
   text-align: center;
 }
 
@@ -319,6 +328,7 @@ a:visited {
 
   .charts-container-expanded {
     grid-template-columns: 1fr;
+    height: 975px;
   }
 
   .search-container>div {
@@ -329,27 +339,17 @@ a:visited {
     display: none;
   }
 }
-
-@media all and (min-width: 400px) {
-  .App {
-    width: 23rem;
-  }
-
-  .search-container>div {
-    justify-content: center;
-  }
-
-  .pie-chart text {
-    display: none;
-  }
-}
-
 
 @media all and (min-width: 600px) {
   .App {
     width: 35rem;
   }
 
+  .charts-container-expanded {
+    grid-template-columns: 1fr;
+    height: 975px;
+  }
+  
   .pie-chart text {
     display: none;
   }
@@ -367,6 +367,7 @@ a:visited {
   .charts-container-expanded {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 500px;
   }
 }
 
