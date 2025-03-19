@@ -1,6 +1,7 @@
 # Meet App
 
-A serverless, progressive web application (PWA) built with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
+A serverless, progressive web application (PWA) built with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.  
+The app may be viewed here: https://cf-meet.vercel.app/
 
 ## Installation
 
@@ -17,3 +18,9 @@ A serverless, progressive web application (PWA) built with React using a test-dr
 - View events and event details
 - View event details in Google Calendar
 - View charts showing event stats
+
+## Images
+
+![Screenshot of the app](/src/assets/meet1.png)
+![Screenshot of the app](/src/assets/meet2.png)
+![Screenshot of the app](/src/assets/meet3.png)
