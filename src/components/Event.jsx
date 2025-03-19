@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 const Event = ({ event }) => {
   const [expanded, setExpanded] = useState(false);
+  const eventRef = useRef(null);
 
   const title = event.summary;
   const startTime = event.created.slice(0, 10);
@@ -10,23 +11,31 @@ const Event = ({ event }) => {
   const description = event.description;
   const calendarLink = event.htmlLink;
 
-  return (
-    <div className={expanded ? "event event-expanded" : "event"}>
-      <h1>{title}</h1>
-      <p>{startTime}, {location}</p>
-      <button className="show-details" onClick={() => setExpanded(!expanded)}>
-        {expanded ? "Hide details" : "Show details"}
-      </button>
-      {expanded && (
-        <div className="details">
-          <hr />
-          <h2>About event</h2>
-          <a href={calendarLink}>See details on Google Calendar</a>
+  // Sets links parent container height dynamically to match child container height
+  const eventStyles = {
+    height: expanded
+      ? `${eventRef.current.getBoundingClientRect().height + 60}px`
+      : "150px",
+  };
 
-          <br />
-          <p className="event-description">{description}</p>
-        </div>
-      )}
+  return (
+    <div className="event" style={eventStyles}>
+      <div ref={eventRef}>
+        <h1>{title}</h1>
+        <p>{startTime}, {location}</p>
+        <button className="show-details" onClick={() => setExpanded(!expanded)}>
+          {expanded ? "Hide details" : "Show details"}
+        </button>
+        
+          <div className={expanded ? "details" : "details-hidden"}>
+            <hr />
+            <h2>About event</h2>
+            <a href={calendarLink}>See details on Google Calendar</a>
+            <br />
+            <p className="event-description">{description}</p>
+          </div>
+        
+      </div>
     </div>
   );
 };
