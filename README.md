@@ -19,6 +19,18 @@ The app may be viewed here: https://cf-meet.vercel.app/
 - View event details in Google Calendar
 - View charts showing event stats
 
+## Technologies used
+
+- React
+- Vite
+- Recharts
+- React testing library
+- Jest-Cucumber
+- Puppeteer
+- AWS Lambda
+- Google Calendar API
+- OAuth2
+
 ## Images
 
 ![Screenshot of the app](/src/assets/meet1.png)
