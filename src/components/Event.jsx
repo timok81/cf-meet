@@ -11,10 +11,9 @@ const Event = ({ event }) => {
   const calendarLink = event.htmlLink;
 
   return (
-    <li className="event">
+    <div className={expanded ? "event event-expanded" : "event"}>
       <h1>{title}</h1>
-      <p>{startTime}</p>
-      <p>{location}</p>
+      <p>{startTime}, {location}</p>
       <button className="show-details" onClick={() => setExpanded(!expanded)}>
         {expanded ? "Hide details" : "Show details"}
       </button>
@@ -28,7 +27,7 @@ const Event = ({ event }) => {
           <p className="event-description">{description}</p>
         </div>
       )}
-    </li>
+    </div>
   );
 };
 
